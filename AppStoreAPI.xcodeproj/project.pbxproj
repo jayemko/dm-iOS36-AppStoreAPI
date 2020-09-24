@@ -14,6 +14,8 @@
 		3C0E7DCA251CFCCE009A73B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E7DC8251CFCCE009A73B3 /* LaunchScreen.storyboard */; };
 		3C0E7DDE251D03A3009A73B3 /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E7DDD251D03A3009A73B3 /* MusicItem.swift */; };
 		3C0E7DE1251D084B009A73B3 /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E7DE0251D084B009A73B3 /* AppItem.swift */; };
+		3C0E7DE4251D0D55009A73B3 /* AppStoreItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E7DE3251D0D55009A73B3 /* AppStoreItemController.swift */; };
+		3C0E7DE8251D10CF009A73B3 /* AppStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E7DE7251D10CF009A73B3 /* AppStoreError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		3C0E7DD3251D016C009A73B3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3C0E7DDD251D03A3009A73B3 /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		3C0E7DE0251D084B009A73B3 /* AppItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItem.swift; sourceTree = "<group>"; };
+		3C0E7DE3251D0D55009A73B3 /* AppStoreItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreItemController.swift; sourceTree = "<group>"; };
+		3C0E7DE7251D10CF009A73B3 /* AppStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		3C0E7DBC251CFCCE009A73B3 /* AppStoreAPI */ = {
 			isa = PBXGroup;
 			children = (
+				3C0E7DE6251D1033009A73B3 /* Helpers */,
 				3C0E7DD4251D0170009A73B3 /* Resources */,
 				3C0E7DD7251D0180009A73B3 /* Models */,
 				3C0E7DD6251D017C009A73B3 /* Views */,
@@ -116,8 +121,17 @@
 		3C0E7DD9251D0189009A73B3 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3C0E7DE3251D0D55009A73B3 /* AppStoreItemController.swift */,
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		3C0E7DE6251D1033009A73B3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3C0E7DE7251D10CF009A73B3 /* AppStoreError.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C0E7DE4251D0D55009A73B3 /* AppStoreItemController.swift in Sources */,
 				3C0E7DE1251D084B009A73B3 /* AppItem.swift in Sources */,
+				3C0E7DE8251D10CF009A73B3 /* AppStoreError.swift in Sources */,
 				3C0E7DDE251D03A3009A73B3 /* MusicItem.swift in Sources */,
 				3C0E7DBE251CFCCE009A73B3 /* AppDelegate.swift in Sources */,
 				3C0E7DC0251CFCCE009A73B3 /* SceneDelegate.swift in Sources */,

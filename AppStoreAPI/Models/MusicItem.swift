@@ -8,10 +8,10 @@
 import Foundation
 
 struct MusicTopLevelObject : Decodable {
-    let results: [MusicTrack]
+    let results: [MusicItem]
 }
 
-struct MusicTrack : Decodable {
+struct MusicItem : Decodable {
     let artistName: String
     let trackName: String
     let artworkUrl100: URL?
