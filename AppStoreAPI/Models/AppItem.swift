@@ -12,7 +12,7 @@ struct AppTopLevelObject : Decodable {
 }
 
 struct AppItem : Decodable {
-    let artistName: String
+    let description: String
     let trackName: String
     let artworkUrl100: URL?
 }
