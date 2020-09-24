@@ -20,7 +20,7 @@ struct StringConstants {
     fileprivate static let entityQueryValueSoftware = "software"
 }
 
-class AppleStoreItemController {
+class AppStoreItemController {
     
     static func fetchMusicItems(searchTerm: String, completion: @escaping (Result<[MusicItem], AppStoreError>) -> Void){
         
