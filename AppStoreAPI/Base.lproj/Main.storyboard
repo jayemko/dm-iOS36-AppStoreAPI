@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Item Search Table View Controller-->
         <scene sceneID="V1B-eQ-mxV">
             <objects>
-                <tableViewController id="E3I-nR-r9N" sceneMemberID="viewController">
+                <tableViewController id="E3I-nR-r9N" customClass="ItemSearchTableViewController" customModule="AppStoreAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jgS-dH-nt7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xfa-J0-Ujg">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                                     <subviews>
-                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bjH-Gp-Gz3">
+                                        <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="bjH-Gp-Gz3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
@@ -32,6 +32,9 @@
                                                 <segment title="Music"/>
                                                 <segment title="Apps"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="entitySegmentedControlValueChanged:" destination="E3I-nR-r9N" eventType="valueChanged" id="ZEg-S6-dOY"/>
+                                            </connections>
                                         </segmentedControl>
                                     </subviews>
                                 </stackView>
@@ -45,7 +48,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="132" id="ome-CE-2h3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entityCell" rowHeight="132" id="ome-CE-2h3" customClass="EntityTableViewCell" customModule="AppStoreAPI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="414" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ome-CE-2h3" id="kwk-2J-947">
@@ -69,7 +72,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[detailLabel]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNg-nn-KWy">
                                                     <rect key="frame" x="0.0" y="31" width="254" height="63"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -87,6 +90,11 @@
                                         <constraint firstItem="e0l-ah-KUv" firstAttribute="top" secondItem="kwk-2J-947" secondAttribute="top" constant="8" id="zBt-oI-GsG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="entityDetailLabel" destination="gNg-nn-KWy" id="E97-If-0HV"/>
+                                    <outlet property="entityThumbnailImageView" destination="e0l-ah-KUv" id="fvV-Xl-89l"/>
+                                    <outlet property="entityTitleLabel" destination="Jve-Bc-fP6" id="EUW-vf-0aC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -94,6 +102,10 @@
                             <outlet property="delegate" destination="E3I-nR-r9N" id="hdJ-xX-kkQ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="entitySearchBar" destination="bjH-Gp-Gz3" id="Dll-vt-mWS"/>
+                        <outlet property="entitySegmentedControl" destination="u5w-7v-DJP" id="zD0-kc-8jp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEe-Fn-P7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
